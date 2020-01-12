@@ -1,5 +1,4 @@
 import json
-from enum import Enum, unique
 import matplotlib as plt
 import numpy as np
 
@@ -25,18 +24,22 @@ struct = { #Locations of corresponding data in the array
 
 def count(respondents, field): #Returns the count of all the answers to a specified field
     countable = [] #Data to be counted
-    answer = []
+    answers = [] #Subdivisions of data
+    return_str = '' #Return string
 
     for respondent in respondents:
         if not countable.__contains__(respondent[field]):
-            answer.append(respondent[field])
+            answers.append(respondent[field])
         countable.append(respondent[field])
 
-    return str(countable.count('Punjab')) + str(countable.count('Sindh')) + str(countable.count('Balochistan')) + str(countable.count('KPK'))
+    for answer in answers:
+        return_str += str(answer) + ' = ' + str(countable.count(answer)) + '\n'
 
-def main():
-    respondents = loader()
-    print(count(respondents, struct['province']))
+    return return_str
 
+def main(): #Main routine
+    respondents = loader() #Get data from the json
+    print(count(respondents, struct['spent_setup'])) #Test line
+    
 
 main()
