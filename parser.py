@@ -1,12 +1,13 @@
 import json
 import matplotlib as plt
 import numpy as np
+from scipy import stats
 
 def loader(): #Loads the json file and extracts its contents to an array
     results = json.loads(open('Responses.json').read())
     respondents = []
-    for i in range(0, len(results)-1):
-        respondents.append(results[i])
+    for result in results:
+        respondents.append(result)
     return respondents
 
 struct = { #Locations of corresponding data in the array
@@ -37,9 +38,32 @@ def count(respondents, field): #Returns the count of all the answers to a specif
 
     return return_str
 
+    indv = { #Numerical identifiers of data currently being processed
+        
+    }
+
+
+def indv_adder(addable): #Adds relevant data to indv struct
+    for stuff in indv:
+        indv
+    for data in addable:
+        
+
+
+def calc_descriptive(calc_on): #Provides descriptive statistical analysis on given data
+    indv_adder(addable)
+    mean = np.mean(calc_on)
+    minima = np.min(calc_on)
+    maxima = np.max(calc_on)
+    variance = np.var(calc_on)
+
+def analysis():
+    
+
 def main(): #Main routine
     respondents = loader() #Get data from the json
-    print(count(respondents, struct['spent_setup'])) #Test line
+    current_var= count(respondents, struct['spent_setup'])
+    calc_descriptive(current_var)
     
 
 main()
