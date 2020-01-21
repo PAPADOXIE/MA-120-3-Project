@@ -1,3 +1,8 @@
+"""
+JSON DATA PARSER
+================
+"""
+
 import json
 import matplotlib as plt
 import numpy as np
@@ -38,32 +43,30 @@ def count(respondents, field): #Returns the count of all the answers to a specif
 
     return return_str
 
-    indv = { #Numerical identifiers of data currently being processed
-        
-    }
-
 
 def indv_adder(addable): #Adds relevant data to indv struct
-    for stuff in indv:
-        indv
-    for data in addable:
+    for stuff in addable:
+
+        indv.append()
         
 
 
 def calc_descriptive(calc_on): #Provides descriptive statistical analysis on given data
-    indv_adder(addable)
-    mean = np.mean(calc_on)
-    minima = np.min(calc_on)
-    maxima = np.max(calc_on)
-    variance = np.var(calc_on)
+    indv = []
+    indv_adder(calc_on, indv)
+    mean = np.mean(indv)
+    minima = np.min(indv)
+    maxima = np.max(indv)
+    variance = np.var(indv)
 
-def analysis():
+#def analysis():
     
 
 def main(): #Main routine
     respondents = loader() #Get data from the json
-    current_var= count(respondents, struct['spent_setup'])
-    calc_descriptive(current_var)
+    current_var = count(respondents, struct['spent_games'])
+    print(current_var)
+    #calc_descriptive(current_var)
     
 
 main()
