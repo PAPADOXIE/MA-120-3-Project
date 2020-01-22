@@ -64,7 +64,7 @@ def calc_descriptive(calc_on): #Provides descriptive statistical analysis on giv
 
 def main(): #Main routine
     respondents = loader() #Get data from the json
-    current_var = count(respondents, struct['genre'])
+    current_var = count(respondents, struct['aesthetic'])
     print(current_var)
     #calc_descriptive(current_var)
     
